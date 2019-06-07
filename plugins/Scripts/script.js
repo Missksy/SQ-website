@@ -5,16 +5,18 @@ $(function () {
     // create dinamic table
     function table(items) {
         var table = $('#Contacts tbody');
+        var html = "";
         table.html('');
         for (var i = 0; i < items.length; i++) {
-            table.append('<tr>');
-            table.append('<td>' + items[i].GivenName + '</td>');
-            table.append('<td>' + items[i].Surname + '</td>');
-            table.append('<td>' + items[i].Email + '</td>');
-            table.append('<td>' + items[i].Phone + '</td>');
-            table.append('<td>' + items[i].Source + '</td>');
-            table.append('</tr>');
+            html += '<tr>';
+            html += '<td>' + items[i].GivenName + '</td>';
+            html += '<td>' + items[i].Surname + '</td>';
+            html += '<td>' + items[i].Email + '</td>';
+            html += '<td>' + items[i].Phone + '</td>';
+            html += '<td>' + items[i].Source + '</td>';
+            html += '</tr>';
         }
+        $(table).append(html);
     }
 
     // Get all contacts
