@@ -57,6 +57,7 @@ $(function () {
             data: {},
             url: urlcontacts,
             success: function (data) {
+                $('#Contacts').DataTable().clear().destroy();
                 table(data);
             }
         });
