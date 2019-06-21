@@ -69,6 +69,10 @@ $(function () {
             } else {
                 info.find('.source-col').hide();
             }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            $('#Details .infos__detail').html('<div class="alert alert-info">Ups, contacto inexistente!</div>');
         }
+        
     });
 });
