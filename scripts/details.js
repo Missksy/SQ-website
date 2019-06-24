@@ -12,10 +12,10 @@ $(function () {
 
 
     var urlByGuid = "http://contactsqs2.apphb.com/Service.svc/rest/contact/byguid/";
-     // get contact by guild
+    // get contact by guild
     var guid = getParameterByName("guid");
 
-     // get contact details
+    // get contact details
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -25,7 +25,18 @@ $(function () {
             var info = $('#Details .informations');
             $("#Details .name").html(item.GivenName + " " + item.Surname);
             if (item.PhotoUrl != null) {
-                $("#Details .avatar img").attr({ 'src': item.PhotoUrl, 'alt': item.GivenName + " " + item.Surname, "title": item.Surname + " " + item.GivenName });
+
+
+                var urlImage = "http://34.90.69.90/resize?width=225&height=225&force=true&url=" + item.PhotoUrl;
+                $.ajax({
+                    type: "GET",
+                    url: urlImage,
+                    cache: true
+                }).always(function () {
+                    $("#Details .avatar img").attr({ 'src': urlImage, 'alt': item.GivenName + " " + item.Surname, "title": item.Surname + " " + item.GivenName });
+                });
+
+
             }
             if (item.Email != null) {
                 info.find('.email').attr('href', 'mailto:' + item.Email).html(item.Email);
@@ -73,6 +84,6 @@ $(function () {
         error: function (xhr, ajaxOptions, thrownError) {
             $('#Details .infos__detail').html('<div class="alert alert-info">Ups, contacto inexistente!</div>');
         }
-        
+
     });
 });

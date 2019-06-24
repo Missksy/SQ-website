@@ -23,28 +23,28 @@ Geral Html
     .btn.btn-secondary { border-radius: 0; background-color: white; color: black; border: 1px solid black; transition: 0.3s; text-transform: uppercase; }
         .btn.btn-secondary:hover { background-color: black; color: white; border: 1px solid black; transition: 0.3s; }
 
-.text-primary{color:#FF9114 !important;}
-.bg-primary{color:#FF9114 !important;}
+.text-primary { color: #FF9114 !important; }
+.bg-primary { color: #FF9114 !important; }
 
 /* Headings */
-body{font-family: 'Open Sans', sans-serif;}
-body h1 { font-size: 48px; }
-body h2 { font-size: 30px; text-transform: uppercase; }
-body h3 { font-size: 22px; text-transform: uppercase; }
-body h4 { font-size: 18px; text-transform: uppercase; }
-body h5 { font-size: 17px; }
-body h6 { font-size: 12px; color: #333333 }
-body p { font-size: 16px; }
+body { font-family: 'Open Sans', sans-serif; }
+    body h1 { font-size: 48px; }
+    body h2 { font-size: 30px; text-transform: uppercase; }
+    body h3 { font-size: 22px; text-transform: uppercase; }
+    body h4 { font-size: 18px; text-transform: uppercase; }
+    body h5 { font-size: 17px; }
+    body h6 { font-size: 12px; color: #333333 }
+    body p { font-size: 16px; }
 
 
 
-.size--s12{font-size:12px;}
-.size--s14{font-size:14px;}
+.size--s12 { font-size: 12px; }
+.size--s14 { font-size: 14px; }
 
-.custom-control{display:flex; justify-content:center;}
+.custom-control { display: flex; justify-content: center; }
 
 #Section_top figure { position: relative; bottom: -50px; }
-#Section_top .avatar { width: 125px; height: 125px; margin: auto; overflow: hidden; border-radius: 50%; transform: scale(1.8);  margin-bottom:40px;}
-#Details .informations{margin:100px 0;}
+#Section_top .avatar { width: 225px; height: 225px; margin: auto; overflow: hidden; border-radius: 50%;  }
+#Details .informations { margin: 100px 0; }
 
-.btn-pushToTop{position:fixed; right:25px; bottom:15px;}
+.btn-pushToTop { position: fixed; right: 25px; bottom: 15px; }
