@@ -127,7 +127,17 @@ $(function () {
     }
 
     function checkVariables(i, j) {
-        return i.Email === j.Email || i.Phone === j.Phone || (i.Surname === j.Surname && i.GivenName === j.GivenName);
+
+        if (i.Email === j.Email) {
+            return true;
+        }
+        if (i.Phone === j.Phone) {
+            return true;
+        }
+        if (i.Surname === j.Surname && i.GivenName === j.GivenName) {
+            return true;
+        }
+        return false;
     }
 
 
