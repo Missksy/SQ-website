@@ -118,8 +118,7 @@ $(function () {
                         window.localStorage.setItem("deletedContacts" + j, deletedContacts[j].toString());
                     }
 
-                    alert('lista criada!');
-                    //window.location = "duplicateFree.html";
+                    window.location = "duplicateFree.html";
 
                 });
             }
