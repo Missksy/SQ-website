@@ -127,16 +127,7 @@ $(function () {
     }
 
     function checkVariables(i, j) {
-        //if (array === undefined) {
-        //    return false;
-        //}
-        //for (let k = 0; k < array.size; k++) {
-        //    if (array[k].Email == j.Email || array[k].Phone === j.Phone) {
-        //        return true;    
-        //    }
-        //}
-
-        return i.Email === j.Email || i.Phone === j.Phone;
+        return i.Email === j.Email || i.Phone === j.Phone || (i.Surname === j.Surname && i.GivenName === j.GivenName);
     }
 
 
