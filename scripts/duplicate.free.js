@@ -1,14 +1,8 @@
 $(function () {
-    //push to top
-    $('.btn-pushToTop').click(function (e) {
-        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-        $('html,body').animate({ scrollTop: 0 }, 'slow');
-    });
-
+    
     var urlcontacts = "http://contactsqs2.apphb.com/Service.svc/rest/contacts";
     
-
-    function table(data) {
+    function newtable(data) {
         $('#Contacts').DataTable({
             data: data,
             "columns": [
@@ -29,34 +23,29 @@ $(function () {
     }
 
     // Get all contacts
-    function bindContacts() {
+    function bindContactsChecking() {
         $.ajax({
             type: "GET",
             dataType: "json",
             data: {},
             url: urlcontacts,
             success: function (data) {
-
                 var deletedContacts = [];
-
                 if (localStorage.getItem("deletedContactsSize") !== null) {
                     for (var i = 0; i < parseInt(localStorage.getItem("deletedContactsSize")); i++) {
                         deletedContacts.push(localStorage.getItem("deletedContacts" + i));
                     }
                 }
-
                 var newData = [];
-
                 data.forEach(function (element) {
                     if (deletedContacts.indexOf(element.Guid) === -1) {
                         newData.push(element);
                     }
                 });
-
-                table(newData);
+                newtable(newData);
             }
         });
     }
 
-    bindContacts();
+    bindContactsChecking();
 });

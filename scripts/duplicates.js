@@ -1,9 +1,4 @@
 $(function () {
-    //push to top
-    $('.btn-pushToTop').click(function (e) {
-        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-        $('html,body').animate({ scrollTop: 0 }, 'slow');
-    });
 
     var urlcontacts = "http://contactsqs2.apphb.com/Service.svc/rest/contacts";
 
@@ -20,7 +15,6 @@ $(function () {
 
                 for (var i = 0; i < items.length; i++) {
                     //is it in the array already?
-                    //  debugger;
                     //Ok, lets iniciate;
                     for (var j = i + 1; j < items.length; j++) {
                         if (checkVariables(items[i], items[j])) {
@@ -111,7 +105,6 @@ $(function () {
                             deletedContacts.push($('#Guid' + i).val());
                         }
                     }
-                    console.log(deletedContacts);
 
                     window.localStorage.setItem("deletedContactsSize", deletedContacts.length.toString());
                     for (var j = 0; j < deletedContacts.length; j++) {
@@ -138,8 +131,6 @@ $(function () {
         }
         return false;
     }
-
-
 
     bindDuplicateContacts();
 });
